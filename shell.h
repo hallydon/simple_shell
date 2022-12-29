@@ -19,8 +19,8 @@
 
 /* for command chaining */
 #define CMD_NORM 0
-#define CMD_OR 1
-#define CMD_AND 2
+#define CMD_OR 		1
+#define CMD_AND 	2
 #define CMD_CHAIN 3
 
 /* for convert_number() */
@@ -30,6 +30,7 @@
 /* 1 if using system getline() */
 #define USE_GETLINE 0
 #define USE_STRTOK 0
+
 #define HIST_FILE	".simple_shell_history"
 #define HIST_MAX	4096
 
@@ -74,7 +75,7 @@ typedef struct passinfo
 {
 	char *arg;
 	char **argv;
-	char path;
+	char *path;
 	int argc;
 	unsigned int line_count;
 	int err_num;
@@ -117,7 +118,7 @@ void fork_cmd(info_t *);
 /* toem_parser.c */
 int is_cmd(info_t *, char *);
 char *dup_chars(char *, int, int);
-char find_path(info_t *, char *, char *);
+char *find_path(info_t *, char *, char *);
 
 /* loophsh.c */
 int loophsh(char **);
@@ -212,7 +213,7 @@ int renumber_history(info_t *info);
 list_t *add_node(list_t **, const char *, int);
 list_t *add_node_end(list_t **, const char *, int);
 size_t print_list_str(const list_t *);
-int delet_node_at_index(list_t **, unsigned int);
+int delete_node_at_index(list_t **, unsigned int);
 void free_list(list_t **);
 
 /* toem_lists1.c */

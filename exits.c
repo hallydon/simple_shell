@@ -57,12 +57,12 @@ char *_strncat(char *dest, char *src, int n)
 	return (s);
 }
 /**
- * *_strchar - locates a character in a string
+ * *_strchr - locates a character in a string
  * @s: the string to be parsed
  * @c: the character to look for
  * Return: (s) a pointer to the memory area s
  */
-char *_strchar(char *s, char c)
+char *_strchr(char *s, char c)
 {
 	do {
 		if (*s == c)

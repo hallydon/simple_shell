@@ -24,7 +24,7 @@ void _eputs(char *str)
  * @c: the character to print
  *
  * Return: on success 1
- * on error, -1 is rweturned, and errno is set appropriately
+ * on error, -1 is returned, and errno is set appropriately
  */
 int _eputchar(char c)
 {
@@ -32,7 +32,7 @@ int _eputchar(char c)
 
 	static char buf[WRITE_BUF_SIZE];
 
-	if  (c == BUF_FLUSH ||i >= WRITE_BUF_SIZE)
+	if  (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
 	{
 		write(2, buf, i);
 		i = 0;
@@ -45,7 +45,7 @@ int _eputchar(char c)
 /**
  * _putfd - writes the character c to given fd
  * @c: the character to print
- * @fd: thr filedescription to write to
+ * @fd: the filedescription to write to
  *
  * Return: on success 1.
  * on error, -1 is returned, and errno is set appropraitely.
